@@ -1,0 +1,13 @@
+{
+  "main.css": "/foursquareApp/static/css/main.f8ce8ed0.chunk.css",
+  "main.js": "/foursquareApp/static/js/main.c05290e9.chunk.js",
+  "main.js.map": "/foursquareApp/static/js/main.c05290e9.chunk.js.map",
+  "static/js/1.af5eacd7.chunk.js": "/foursquareApp/static/js/1.af5eacd7.chunk.js",
+  "static/js/1.af5eacd7.chunk.js.map": "/foursquareApp/static/js/1.af5eacd7.chunk.js.map",
+  "runtime~main.js": "/foursquareApp/static/js/runtime~main.6b438d32.js",
+  "runtime~main.js.map": "/foursquareApp/static/js/runtime~main.6b438d32.js.map",
+  "static/css/main.f8ce8ed0.chunk.css.map": "/foursquareApp/static/css/main.f8ce8ed0.chunk.css.map",
+  "index.html": "/foursquareApp/index.html",
+  "precache-manifest.11d5cc718a16dfd8506c93d3de9d5b49.js": "/foursquareApp/precache-manifest.11d5cc718a16dfd8506c93d3de9d5b49.js",
+  "service-worker.js": "/foursquareApp/service-worker.js"
+}
