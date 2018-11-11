@@ -1,29 +1,33 @@
-import {getLocation} from './helpers';
+import {getCookie} from './helpers';
 
-const CLIENT_ID = 'SPCGCBMXAIUCDAL1JJHXB0OWEIVIWZGKWYCPFQNPAUDZCNQH'
+const CLIENT_ID     = 'SPCGCBMXAIUCDAL1JJHXB0OWEIVIWZGKWYCPFQNPAUDZCNQH'
 const CLIENT_SECRET = '2IGTREZMXLUYXYIELZ1P4FEQ0VSMXX5DY2GALBQL0NPD34LC'
-// const redirectUri = 'https://alinawww.github.io/testgp/'
-const redirectUri = 'http://localhost:3000/'
-const redirectUrl = `https://foursquare.com/oauth2/authenticate?client_id=${CLIENT_ID}&response_type=code&redirect_uri=${redirectUri}/`
 
-const latitude = window.localStorage.getItem('latitude')
-const longitude = window.localStorage.getItem('longitude')
-const accessToken = window.localStorage.getItem('accessToken')
+let uriRedirect     = process.env.NODE_ENV === 'development'
+                        ? 'http://localhost:3000'
+                        : 'https://alinawww.github.io/foursquareApp/'
+const redirectUrl   = `https://foursquare.com/oauth2/authenticate?client_id=${CLIENT_ID}&response_type=code&redirect_uri=${uriRedirect}/`
+const accessToken   = getCookie('accessToken')
 const authorizationCode = window.location.href.match(/code=([^&]*)/)
 
 const Foursquare = {
     getAccessToken() {
         if (authorizationCode) {
-            const getTokenUrl = `https://foursquare.com/oauth2/access_token?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&grant_type=authorization_code&redirect_uri=${redirectUri}&code=${authorizationCode[1]}`
+            const searchParams = [
+                `client_id=${CLIENT_ID}`,
+                `client_secret=${CLIENT_SECRET}`,
+                `grant_type=authorization_code`,
+                `redirect_uri=${uriRedirect}`,
+                `code=${authorizationCode[1]}`
+            ]
+            const getTokenUrl = `https://foursquare.com/oauth2/access_token?${searchParams.join('&')}`
             fetch(getTokenUrl, {mode: 'cors'})
                 .then(results => {
-                    console.log('results', results);
                     if (results.ok) {
                         return results.json()
                     }
                 }).then(token => {
-                    console.log(token);
-                    window.localStorage.setItem('accessToken', token.access_token)
+                    document.cookie = `accessToken=${token.access_token}`
                 })
         }
         else {
@@ -33,14 +37,7 @@ const Foursquare = {
         return accessToken
     },
 
-
-    findPlaces(recommended=false) {
-        if (!latitude || !longitude) {
-            return getLocation(position => {
-                window.localStorage.setItem('latitude', position.coords.latitude)
-                window.localStorage.setItem('longitude', position.coords.longitude)
-            })
-        }
+    findPlaces(recommended=false, latitude, longitude) {
         const searchParams = [
             `ll=${latitude},${longitude}`,
             `client_id=${CLIENT_ID}`,
@@ -76,7 +73,7 @@ const Foursquare = {
             })
             .catch(error => {
                 console.error('Error when getting the venues information:', error)
-        })
+            })
     }
 }
 
