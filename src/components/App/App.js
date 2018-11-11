@@ -28,7 +28,6 @@ class App extends Component {
     componentDidUpdate(prevProps, prevState) {
         if (prevState.currentPosition.lat !== this.state.currentPosition.lat ||
             prevState.currentPosition.lng !== this.state.currentPosition.lng) {
-            console.log('in here', this.state.currentPosition.lat, this.state.currentPosition.lng);
             this.findPlaces(this.state.venuesType === 'recommended')
         }
     }
@@ -52,7 +51,7 @@ class App extends Component {
                 this.setState({isLoading: false})
             })
         }
-        Foursquare.findPlaces(recommended, latitude, longitude).then(venues => {
+        Foursquare.findPlaces(latitude, longitude, recommended).then(venues => {
             recommended
                 ? this.setState({
                     recommendedVenues: venues,

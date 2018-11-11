@@ -2,23 +2,25 @@ import {getCookie} from './helpers';
 
 const CLIENT_ID     = 'SPCGCBMXAIUCDAL1JJHXB0OWEIVIWZGKWYCPFQNPAUDZCNQH'
 const CLIENT_SECRET = '2IGTREZMXLUYXYIELZ1P4FEQ0VSMXX5DY2GALBQL0NPD34LC'
+const APP_VERSION   = '20191106'
+const AUTHORIZATION_CODE = window.location.href.match(/code=([^&]*)/)
 
 let uriRedirect     = process.env.NODE_ENV === 'development'
                         ? 'http://localhost:3000'
                         : 'https://alinawww.github.io/foursquareApp/'
+                        
 const redirectUrl   = `https://foursquare.com/oauth2/authenticate?client_id=${CLIENT_ID}&response_type=code&redirect_uri=${uriRedirect}/`
 const accessToken   = getCookie('accessToken')
-const authorizationCode = window.location.href.match(/code=([^&]*)/)
 
 const Foursquare = {
     getAccessToken() {
-        if (authorizationCode) {
+        if (AUTHORIZATION_CODE) {
             const searchParams = [
                 `client_id=${CLIENT_ID}`,
                 `client_secret=${CLIENT_SECRET}`,
                 `grant_type=authorization_code`,
                 `redirect_uri=${uriRedirect}`,
-                `code=${authorizationCode[1]}`
+                `code=${AUTHORIZATION_CODE[1]}`
             ]
             const getTokenUrl = `https://foursquare.com/oauth2/access_token?${searchParams.join('&')}`
             fetch(getTokenUrl, {mode: 'cors'})
@@ -37,12 +39,12 @@ const Foursquare = {
         return accessToken
     },
 
-    findPlaces(recommended=false, latitude, longitude) {
+    findPlaces(latitude, longitude, recommended=false) {
         const searchParams = [
             `ll=${latitude},${longitude}`,
             `client_id=${CLIENT_ID}`,
             `client_secret=${CLIENT_SECRET}`,
-            `v=20191106`
+            `v=${APP_VERSION}`
         ]
         if (recommended) {
             if (accessToken) {
