@@ -47,6 +47,9 @@ class App extends Component {
                     lng: position.coords.longitude
                 }
                 this.setState({currentPosition: coords})
+            }, () => {
+                console.log('Error: Your location needs to be allowed for this service.');
+                this.setState({isLoading: false})
             })
         }
         Foursquare.findPlaces(recommended, latitude, longitude).then(venues => {
