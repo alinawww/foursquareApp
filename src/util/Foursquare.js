@@ -1,14 +1,10 @@
-import {getCookie} from './helpers';
-
-const CLIENT_ID     = 'SPCGCBMXAIUCDAL1JJHXB0OWEIVIWZGKWYCPFQNPAUDZCNQH'
-const CLIENT_SECRET = '2IGTREZMXLUYXYIELZ1P4FEQ0VSMXX5DY2GALBQL0NPD34LC'
-const APP_VERSION   = '20191106'
-const AUTHORIZATION_CODE = window.location.href.match(/code=([^&]*)/)
+import {getCookie} from './helpers.js';
+import {CLIENT_ID, CLIENT_SECRET, APP_VERSION, AUTHORIZATION_CODE} from '../config.js'
 
 let uriRedirect     = process.env.NODE_ENV === 'development'
                         ? 'http://localhost:3000'
                         : 'https://alinawww.github.io/foursquareApp/'
-                        
+
 const redirectUrl   = `https://foursquare.com/oauth2/authenticate?client_id=${CLIENT_ID}&response_type=code&redirect_uri=${uriRedirect}/`
 const accessToken   = getCookie('accessToken')
 
