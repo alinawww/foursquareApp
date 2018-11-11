@@ -1,13 +1,13 @@
 {
-  "main.css": "/foursquareApp/static/css/main.dc6eece2.chunk.css",
-  "main.js": "/foursquareApp/static/js/main.b93a746c.chunk.js",
-  "main.js.map": "/foursquareApp/static/js/main.b93a746c.chunk.js.map",
+  "main.css": "/foursquareApp/static/css/main.bb9ba0ec.chunk.css",
+  "main.js": "/foursquareApp/static/js/main.47396731.chunk.js",
+  "main.js.map": "/foursquareApp/static/js/main.47396731.chunk.js.map",
   "static/js/1.af5eacd7.chunk.js": "/foursquareApp/static/js/1.af5eacd7.chunk.js",
   "static/js/1.af5eacd7.chunk.js.map": "/foursquareApp/static/js/1.af5eacd7.chunk.js.map",
   "runtime~main.js": "/foursquareApp/static/js/runtime~main.6b438d32.js",
   "runtime~main.js.map": "/foursquareApp/static/js/runtime~main.6b438d32.js.map",
-  "static/css/main.dc6eece2.chunk.css.map": "/foursquareApp/static/css/main.dc6eece2.chunk.css.map",
+  "static/css/main.bb9ba0ec.chunk.css.map": "/foursquareApp/static/css/main.bb9ba0ec.chunk.css.map",
   "index.html": "/foursquareApp/index.html",
-  "precache-manifest.ce18bc79f006325875f718c57ea0622b.js": "/foursquareApp/precache-manifest.ce18bc79f006325875f718c57ea0622b.js",
+  "precache-manifest.a5d5e6f960118ba0ddef558a40131130.js": "/foursquareApp/precache-manifest.a5d5e6f960118ba0ddef558a40131130.js",
   "service-worker.js": "/foursquareApp/service-worker.js"
 }
