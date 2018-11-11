@@ -1,11 +1,12 @@
 .intro__actions {
-    margin-top: 48px;
+    margin-top: 24px;
 }
 .intro__button {
     border: 0;
     padding: 16px;
     font-size: 16px;
-    margin: 0 8px;
+    margin: 4px 0;
+    width: 100%;
     border-radius: 2px;
     color: #3e4eb8;
     font-weight: 600;
@@ -19,4 +20,14 @@
 }
 .intro__button:focus {
     outline: none;
+}
+
+@media only screen and (min-width: 684px) {
+    .intro__actions {
+        margin-top: 48px;
+    }
+    .intro__button {
+        width: auto;
+        margin: 0 8px;
+    }
 }
