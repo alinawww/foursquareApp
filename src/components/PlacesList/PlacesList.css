@@ -1,0 +1,27 @@
+.venues-empty__image {
+    width: 200px;
+    display: block;
+    margin: 32px auto 0 auto;
+
+}
+
+.venues {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    max-width: 684px;
+    margin: -96px auto 64px auto;
+    background: #fff;
+    border-radius: 2px;
+    padding: 32px 0;
+}
+
+.venues-empty {
+    padding: 0 32px;
+    text-align: center;
+    color: rgba(62, 78, 184, .6)
+}
+.venues-empty__title {
+    margin: 0 auto 16px auto;
+}
+.venues-empty__text {
+    margin: 0;
+}

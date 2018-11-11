@@ -1,0 +1,84 @@
+/* http://cloudcannon.com/deconstructions/2014/11/15/facebook-content-placeholder-deconstruction.html */
+
+@keyframes placeHolderShimmer{
+    0%{
+        background-position: -468px 0
+    }
+    100%{
+        background-position: 468px 0
+    }
+}
+.venues__item-title {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.venue__item-address {
+    margin: 0;
+}
+
+.venues__item {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    margin: 24px;
+    display: flex;
+    border-radius: 2px;
+    overflow: hidden;
+}
+.venues__item:first-child {
+    margin-top: 0;
+}
+.venues__item:last-child {
+    margin-bottom: 0;
+}
+.venues__item-icon {
+    background: #f94878;
+    padding: 16px;
+}
+
+.venues__item-content {
+    padding: 16px 32px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.venues__item:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15), 0 6px 6px rgba(0,0,0,0.01);
+}
+
+.fake-element {
+    background: #eaeaea;
+    border-radius: 2px;
+    display: block;
+    background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+    background-size: 930px 18px;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    position: relative;
+}
+
+.fake-element--title {
+    height: 18px;
+    width: 220px;
+    margin-bottom: 8px;
+}
+
+.fake-element--address {
+    height: 16px;
+}
+
+.fake-element--icon {
+    height: 64px;
+    width: 64px;
+}
+
+.venues__item-icon--fake {
+    background: #ddd;
+    width: 64px;
+    height: 64px;
+}

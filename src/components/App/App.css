@@ -1,0 +1,12 @@
+.foursquare__intro {
+    display: flex;
+    flex-direction: column;
+    background: #3f51b5;
+    align-items: center;
+    padding: 64px 64px 160px 64px;
+}
+.intro__title {
+    color: #fff;
+    font-size: 64px;
+    margin: 0;
+}
