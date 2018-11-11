@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/foursquareApp/static/js/runtime~main.6b438d32.js"
   },
   {
-    "revision": "f177677021c6e9766ea9",
-    "url": "/foursquareApp/static/js/main.f1776770.chunk.js"
+    "revision": "f2fd5a79ec15ac5e87ce",
+    "url": "/foursquareApp/static/js/main.f2fd5a79.chunk.js"
   },
   {
     "revision": "af5eacd7e3fb440d3d57",
     "url": "/foursquareApp/static/js/1.af5eacd7.chunk.js"
   },
   {
-    "revision": "f177677021c6e9766ea9",
+    "revision": "f2fd5a79ec15ac5e87ce",
     "url": "/foursquareApp/static/css/main.dc6eece2.chunk.css"
   },
   {
-    "revision": "1f3a2c455a621997c8988dd0778de692",
+    "revision": "5db85adcda37a8b234b968abf0fb85f3",
     "url": "/foursquareApp/index.html"
   }
 ];
