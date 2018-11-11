@@ -1,13 +1,13 @@
 import React from 'react';
 import {VenueItem, FakeVenueItem} from '../Place/Place';
+import './PlacesList.css';
 
 const EmptyVenuesList = () => {
-    console.log('process.env', process.env);
     return (
         <div className="venues-empty">
             <h2 className="venues-empty__title">Where to next?</h2>
             <p className="venues-empty__text">Discover places around your by using the options above</p>
-            <img className="venues-empty__image" src={`${process.env.PUBLIC_URL}/../../assets/undraw_lost.svg`} alt="woman"/>
+            <img className="venues-empty__image" src={`${process.env.PUBLIC_URL}/assets/undraw_lost.svg`} alt="woman"/>
         </div>
     )
 }

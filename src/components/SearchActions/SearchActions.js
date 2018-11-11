@@ -1,4 +1,5 @@
 import React from 'react';
+import './SearchActions.css';
 
 export const SearchActions = (props) => {
     const {findPlaces} = props

@@ -1,4 +1,5 @@
 import React from 'react';
+import './Place.css';
 
 export const VenueItem = (props) => {
     const {iconUrl, address, name} = props.venue
