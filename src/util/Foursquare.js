@@ -38,6 +38,8 @@ const Foursquare = {
     findPlaces(latitude, longitude, recommended=false) {
         const searchParams = [
             `ll=${latitude},${longitude}`,
+            'radius=2000',
+            'limit=15',
             `client_id=${CLIENT_ID}`,
             `client_secret=${CLIENT_SECRET}`,
             `v=${APP_VERSION}`
@@ -59,7 +61,7 @@ const Foursquare = {
                 return jsonData.response.venues.map(
                     venue => {
                         const location = venue.location
-                        const category = venue.categories[0] // the venues usually have only one cat
+                        const category = venue.categories.find(category => category.primary)
                         const iconUrl = category ? `${category.icon.prefix}64${category.icon.suffix}` : `${process.env.PUBLIC_URL}/assets/default_icon.svg`
                         const label = category ? `${category.shortName}` : ''
                         const distance = location.distance
