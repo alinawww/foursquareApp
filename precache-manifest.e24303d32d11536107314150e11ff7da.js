@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/foursquareApp/static/css/main.bb9ba0ec.chunk.css"
   },
   {
-    "revision": "22aedb71a7f0d4c1bf8ea56b1a8444df",
+    "revision": "9f135cc4cde7533d2b1d7521ff190653",
     "url": "/foursquareApp/index.html"
   }
 ];
