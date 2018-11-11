@@ -1,4 +1,4 @@
-import {getCookie} from './helpers.js';
+import {getCookie} from './Helpers.js';
 import {CLIENT_ID, CLIENT_SECRET, APP_VERSION, AUTHORIZATION_CODE} from '../config.js'
 
 let uriRedirect     = process.env.NODE_ENV === 'development'
@@ -58,13 +58,20 @@ const Foursquare = {
                 if (!jsonData.response) return []
                 return jsonData.response.venues.map(
                     venue => {
+                        const location = venue.location
                         const category = venue.categories[0] // the venues usually have only one cat
-                        const iconUrl = category ? `${category.icon.prefix}64${category.icon.suffix}` : ''
+                        const iconUrl = category ? `${category.icon.prefix}64${category.icon.suffix}` : `${process.env.PUBLIC_URL}/assets/default_icon.svg`
+                        const label = category ? `${category.shortName}` : ''
+                        const distance = location.distance
+                        const mapURL = `http://www.google.com/maps/place/${location.lat},${location.lng}`
                         return {
                             id: venue.id,
                             name: venue.name,
-                            address: venue.location.address,
+                            address: location.address,
+                            label,
                             iconUrl,
+                            distance,
+                            mapURL
                         }
                     }
                 )

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Foursquare from '../../util/Foursquare.js';
-import {getCookie, getLocation} from '../../util/helpers.js';
+import {getCookie, getLocation} from '../../util/Helpers.js';
 import {VenuesList} from '../PlacesList/PlacesList';
 import {SearchActions} from '../SearchActions/SearchActions';
 
@@ -66,6 +66,10 @@ class App extends Component {
         })
     }
 
+    goToMap(mapUrl) {
+        window.open(mapUrl, '_blank');
+    }
+
     render() {
         return (
             <div className="foursquare">
@@ -77,7 +81,8 @@ class App extends Component {
                     recommendedVenues={this.state.recommendedVenues}
                     nearbyVenues={this.state.nearbyVenues}
                     isLoading={this.state.isLoading}
-                    venuesType={this.state.venuesType} />
+                    venuesType={this.state.venuesType}
+                    goToMap={this.goToMap} />
             </div>
         )
     }

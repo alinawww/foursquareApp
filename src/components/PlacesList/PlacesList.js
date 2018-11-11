@@ -7,13 +7,13 @@ const EmptyVenuesList = () => {
         <div className="venues-empty">
             <h2 className="venues-empty__title">Where to next?</h2>
             <p className="venues-empty__text">Discover places around your by using the options above</p>
-            <img className="venues-empty__image" src={`${process.env.PUBLIC_URL}/assets/undraw_lost.svg`} alt="woman"/>
+            <img className="venues-empty__image" src={`${process.env.PUBLIC_URL}/assets/undraw_lost.svg`} alt="man looking on a map"/>
         </div>
     )
 }
 
 export const VenuesList = (props) => {
-    const {recommendedVenues, nearbyVenues, venuesType, isLoading} = props
+    const {recommendedVenues, nearbyVenues, venuesType, isLoading, goToMap} = props
     let venues;
     if (isLoading || !venuesType.length) {
         venues = []
@@ -34,7 +34,7 @@ export const VenuesList = (props) => {
                 })
             }
             {venues.length > 0 && venues.map(venue => {
-                return <VenueItem key={venue.id} venue={venue} />
+                return <VenueItem key={venue.id} venue={venue} goToMap={goToMap}/>
                 })
             }
             {venues.length === 0 && !isLoading && <EmptyVenuesList />}
