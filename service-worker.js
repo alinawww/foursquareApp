@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/foursquareApp/precache-manifest.250873e84098d7d4c97f19497e4fade0.js"
+  "/foursquareApp/precache-manifest.04bda898004239d8b41b20fe21abe258.js"
 );
 
 workbox.clientsClaim();
