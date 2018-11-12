@@ -12,9 +12,7 @@ class App extends Component {
         this.state = {
             nearbyVenues: [],
             recommendedVenues: [],
-            error: null,
             isLoading: false,
-            code: '',
             currentPosition: {
                 lat: 0,
                 lng: 0
@@ -23,6 +21,7 @@ class App extends Component {
         };
 
         this.findPlaces = this.findPlaces.bind(this)
+        this.goToMap = this.goToMap.bind(this)
     }
 
     componentDidUpdate(prevProps, prevState) {
