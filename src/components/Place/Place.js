@@ -3,13 +3,14 @@ import './Place.css';
 
 export const VenueItem = (props) => {
     const {goToMap} = props
-    const {iconUrl, address, name, label, distance, mapURL} = props.venue
+    const {iconUrl, address, name, label, distance, mapURL, reason} = props.venue
     return (
         <div className="venues__item" onClick={() => goToMap(mapURL)}>
             <div className="venues__item-icon">
                 <img src={iconUrl} alt="venue icon"/>
             </div>
             <div className="venues__item-content">
+                { reason && <span className="venue__item-label venue__item-label--sup">{reason}</span> }
                 <h2 className="venues__item-title">{name}</h2>
                 { label && <p className="venue__item-label">{label}</p> }
                 <div>
